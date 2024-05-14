@@ -6,7 +6,7 @@
 // [1 5 11 21 81 4 0 91 2 3]
 // // => 2
 
-int[] CreateArrayRndInt(int size, int min, int max)
+int[] CreateArrayRndInt(int size, int min, int max)   //создали функцию для создания массива из случайных чисел 
 {
     int[] array = new int[size];
     Random rnd = new Random();
@@ -18,7 +18,7 @@ int[] CreateArrayRndInt(int size, int min, int max)
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(int[] array)                        //создали функцию для вывода массива 
 {
     Console.Write("[");
     for (int count = 0; count < array.Length; count++)
@@ -36,7 +36,8 @@ void PrintArray(int[] array)
     Console.Write("]");
 }
 
-int CountNumsLastADevB(int[] array, int aLast, int bDev)
+int CountNumsLastADevB(int[] array, int aLast, int bDev) //создали функцию , которая определяет число делящее на 7 и оканчивающаяся на 1
+                                                         //и считает их количество 
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -48,9 +49,9 @@ int CountNumsLastADevB(int[] array, int aLast, int bDev)
     }
     return count;
 }
-Console.WriteLine("Задайте размер массива: ");
+Console.WriteLine("Задайте размер массива: "); //ввод размера массива с консоли
 int n = Convert.ToInt32(Console.ReadLine());
-int[] arr = CreateArrayRndInt(n, 1, 100);
-PrintArray(arr);
-int result =CountNumsLastADevB(arr, 1, 7);
-Console.Write($" => {result}");
+int[] arr = CreateArrayRndInt(n, 1, 100);      //ввод параметров для создания масиива
+PrintArray(arr);                               //ввод параметра для вывода массива на консоль
+int result =CountNumsLastADevB(arr, 1, 7); //ввод параметров для функции определения количества чисел делящихся на 7 и окончив на 1
+Console.Write($" => {result}");            //вывод  количества чисел на консоль
