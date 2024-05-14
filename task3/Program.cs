@@ -7,7 +7,7 @@
 // [1 3 2 4 2 3] => 132423
 // [2 3 1] => 231
 
-int[] CreateArrayRndInt(int size, int min, int max)
+int[] CreateArrayRndInt(int size, int min, int max) //создали функцию для создание массива случайных чисел ль 0 до 9 
 {
     int[] array = new int[size];
     Random rnd = new Random();
@@ -20,7 +20,7 @@ int[] CreateArrayRndInt(int size, int min, int max)
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(int[] array) //воздали функцию для вывода массива на консоль
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -37,7 +37,7 @@ void PrintArray(int[] array)
     Console.Write("]");
 }
 
-int ArrayToNumber(int[] array)
+int ArrayToNumber(int[] array)   //создали функцию для перевода  массива в целое число
 {
     int res = 0;
     for (int i = 0; i < array.Length; i++)
@@ -48,17 +48,17 @@ int ArrayToNumber(int[] array)
     return res;
 }
 
-Console.WriteLine("Задайте размер массива: ");
+Console.WriteLine("Задайте размер массива: "); // ввод размера массива
 int n = Convert.ToInt32(Console.ReadLine());
 
-if(n < 1 || n > 8 )
+if(n < 1 || n > 8 )                           // проверка, чтобы число массива было от 1 до 8
 {
     Console.WriteLine("Некорректный ввод!");
     return;
 }
 
-int[] arr = CreateArrayRndInt(n, 0, 10);
-PrintArray(arr);
+int[] arr = CreateArrayRndInt(n, 0, 10); //ввод параметров функции создание массива
+PrintArray(arr);                         //ввод параметров вывода массива на консоль 
 
-int result = ArrayToNumber(arr);
+int result = ArrayToNumber(arr);         //вывод числа на  консоль  
 Console.WriteLine($" => {result}");
