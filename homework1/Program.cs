@@ -1,48 +1,6 @@
 ﻿//Задача 1: Напишите программу, которая бесконечно запрашивает целые числа с консоли.
 // Программа завершается при вводе символа ‘q’ или при вводе числа, сумма цифр которого чётная.
 
-
-bool IsSumNumEven(int num)
-{
-    //int numCopy = num;
-    int sum = 0;
-    while (num != 0)
-    {
-        sum = sum + num % 10;
-        num /= 10;
-    }
-
-    if (sum % 2 != 0)
-    {
-        return false;
-    }
-    return true;
-}
-
-Console.Write("Введите целое число: ");
-string nums = "";
-while (true)
-{
-    string? data = Console.ReadLine();
-    if (data == "q")
-    {
-        Console.Write($"{nums} q [STOP]");
-        break;
-    }
-
-    int num = Convert.ToInt32(data);
-
-    if (IsSumNumEven(num))
-    {
-        Console.Write($"{nums} {num} [STOP]");
-        break;
-    }
-    nums = nums + " " + num;
-}
-
-Console.WriteLine();
-
-
 while (true)
 {
     Console.Write("Введите целое число или 'q' для выхода: ");
@@ -50,6 +8,7 @@ while (true)
 
     if (input == "q")
     {
+        Console.WriteLine("ввели q [STOP]");
         break;
     }
 
@@ -61,10 +20,7 @@ while (true)
             break;
         }
     }
-    else
-    {
-        Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число.");
-    }
+
 }
 
 static bool IsSumOfDigitsEven(int number)
@@ -77,3 +33,34 @@ static bool IsSumOfDigitsEven(int number)
     }
     return sum % 2 == 0;
 }
+Console.WriteLine("[Решение 2]");
+
+while (true)                                       // Бесконечный цикл
+{
+    Console.Write("Введите число или 'q' для выхода: ");
+    string input = Console.ReadLine();                // Чтение строки ввода пользователя
+
+    if (input == "q")                                // Проверка на ввод 'q' для выхода
+    {
+        Console.WriteLine("ввели q [STOP]");
+        break;
+    }
+    int number;
+    if (int.TryParse(input, out number))             // Проверка, является ли ввод числом
+    {
+        int sum = 0;
+        while (number > 0)                              // Вычисление суммы цифр числа
+        {
+            sum += number % 10;                            // Добавление последней цифры к сумме
+            number /= 10;                                  // Удаление последней цифры из числа
+        }
+        if (sum % 2 == 0)                              // Проверка, является ли сумма цифр четной
+        {
+            Console.WriteLine("Сумма чётна.[STOP]");
+            break;
+        }
+    }
+}
+
+
+
