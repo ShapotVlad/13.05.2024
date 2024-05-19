@@ -9,10 +9,11 @@
 
 int[] CreateArrayRndInt(int size, int min, int max) //создали функцию для создание массива случайных чисел ль 0 до 9 
 {
-    int[] array = new int[size];
-    Random rnd = new Random();
+    int[] array = new int[size]; //массив для хранения случайных чисел
 
-    for (int i = 0; i < size; i++)
+    Random rnd = new Random(); //генератор случайных чисел
+
+    for (int i = 0; i < size; i++) //цикл заполнения массива случайными числами
     {
         array[i] = rnd.Next(min, max);
     }
@@ -23,13 +24,13 @@ int[] CreateArrayRndInt(int size, int min, int max) //создали функц�
 void PrintArray(int[] array) //воздали функцию для вывода массива на консоль
 {
     Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++) //цикл для вывода случайных чисел массива
     {
         if (i < array.Length - 1)
         {
             Console.Write($"{array[i]}, ");
         }
-        else
+        else                                //отсутствие запятой после последнего числа массива
         {
             Console.Write($"{array[i]}");
         }
@@ -40,7 +41,7 @@ void PrintArray(int[] array) //воздали функцию для вывода
 int ArrayToNumber(int[] array)   //создали функцию для перевода  массива в целое число
 {
     int res = 0;
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++) //цикл перевода чисел массива в число
     {
         res = res * 10 + array[i];
     }
