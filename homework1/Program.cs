@@ -1,29 +1,31 @@
 ﻿//Задача 1: Напишите программу, которая бесконечно запрашивает целые числа с консоли.
 // Программа завершается при вводе символа ‘q’ или при вводе числа, сумма цифр которого чётная.
+//вариант 1
 
-while (true)
+
+while (true) //содаем бесконечный цикл true
 {
     Console.Write("Введите целое число или 'q' для выхода: ");
     string input = Console.ReadLine();
 
-    if (input == "q")
+    if (input == "q") //условие если
     {
-        Console.WriteLine("ввели q [STOP]");
+        Console.WriteLine("ввели q [STOP]");//если ввели q то стоп программа
         break;
     }
 
-    if (int.TryParse(input, out int number))
+    if (int.TryParse(input, out int number))// вводим цикл если TryParse (является вводное слово - числом)
     {
-        if (IsSumOfDigitsEven(number))
+        if (IsSumOfDigitsEven(number))//вводим цикл если,вызывая логическую функцию  IsSumOfDigitsEven
         {
-            Console.WriteLine("Сумма цифр числа четна. Программа завершена.");
+            Console.WriteLine("Сумма цифр числа четна. Программа завершена.");//если сумма цифр четна -стоп программа
             break;
         }
     }
 
 }
 
-static bool IsSumOfDigitsEven(int number)
+static bool IsSumOfDigitsEven(int number)// создали логическую функцию   определения чётности суммы цифр
 {
     int sum = 0;
     while (number > 0)
