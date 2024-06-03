@@ -58,8 +58,8 @@ if(n < 1 || n > 8 )                           // проверка, чтобы ч
     return;
 }
 
-int[] arr = CreateArrayRndInt(n, 0, 10); //ввод параметров функции создание массива
-PrintArray(arr);                         //ввод параметров вывода массива на консоль 
+int[] arr = CreateArrayRndInt(n, 0, 10); //вызов функции и  ввод параметров функции создание массива
+PrintArray(arr);                         //вызов функции и  вывод массива на консоль 
 
-int result = ArrayToNumber(arr);         //вывод числа на  консоль  
+int result = ArrayToNumber(arr);         //вызов функции и вывод числа на  консоль  
 Console.WriteLine($" => {result}");
